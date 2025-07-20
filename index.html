@@ -27,19 +27,11 @@
             border-radius: 15px;
             box-shadow: 0 0 15px #00ffe7;
             margin-bottom: 40px;
-            animation: fadeIn 2s ease;
         }
         h2 {
             text-align: center;
             color: #00ffe7;
             font-size: 28px;
-        }
-        p.quote {
-            font-style: italic;
-            color: #00ff99;
-            text-align: center;
-            margin-top: 30px;
-            font-size: 20px;
         }
         .footer {
             background-color: #222;
@@ -50,12 +42,12 @@
             max-width: 900px;
             margin: 20px auto 0 auto;
             border-radius: 10px;
-            animation: fadeIn 2s ease;
         }
         .footer a {
             color: #00ffe7;
             text-decoration: none;
         }
+
         .gallery-container {
             overflow-x: auto;
             white-space: nowrap;
@@ -65,9 +57,9 @@
             max-width: 95%;
             border-radius: 10px;
             border: 2px solid #00ffe7;
-            animation: fadeIn 2s ease;
         }
-        .gallery-scroll img {
+        .gallery-scroll img,
+        .gallery-scroll video {
             display: inline-block;
             width: 300px;
             height: 200px;
@@ -75,38 +67,30 @@
             border-radius: 10px;
             object-fit: cover;
             vertical-align: middle;
+            cursor: pointer;
             transition: transform 0.4s ease;
-            animation: fadeInUp 1.5s ease;
         }
-        .gallery-scroll img:hover {
+        .gallery-scroll img:hover,
+        .gallery-scroll video:hover {
             transform: scale(1.1);
             box-shadow: 0 0 20px #00ffe7;
         }
-        /* Video Section */
-        .video-section {
-            background-color: #111;
-            padding: 20px;
-            max-width: 95%;
-            margin: 30px auto;
-            border: 2px solid #00ffe7;
+
+        /* LIGHTBOX */
+        .lightbox {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        .lightbox img, .lightbox video {
+            max-width: 90%;
+            max-height: 90%;
             border-radius: 10px;
-            text-align: center;
-            animation: fadeIn 2s ease;
-        }
-        .video-section video {
-            width: 90%;
-            max-width: 800px;
-            margin: 15px 0;
-            border-radius: 10px;
-            box-shadow: 0 0 15px #00ffe7;
-        }
-        @keyframes fadeIn {
-            from {opacity: 0;}
-            to {opacity: 1;}
-        }
-        @keyframes fadeInUp {
-            from {opacity: 0; transform: translateY(20px);}
-            to {opacity: 1; transform: translateY(0);}
         }
     </style>
 </head>
@@ -121,42 +105,38 @@
         </p>
         <p>
             Al centro, troneggia la lettera “A”, simbolo potente e inconfondibile di un gruppo che, pur tra mille differenze, ha saputo unirsi per proteggere ciò che conta.
-            Da un lato, illuminati da chicchi più chiari, vediamo gli eroi, dall’altro lato, avvolti in toni più scuri, gli antagonisti.
         </p>
         <p>
             Tutto intorno, il carro racconta con simboli: lo scudo di Cap, il martello di Thor, i pugni di Hulk, la clessidra della Vedova nera e l’arco di Hawkeye.
         </p>
-        <p>
-            Questo carro parla di noi: delle nostre lotte quotidiane, delle cadute, dei legami che ci tengono uniti quando il mondo sembra andare in frantumi.
-        </p>
-        <p class="quote">
+        <p style="font-style:italic; text-align:center; color:#00ff99;">
             “Questa è la battaglia della nostra vita e la vinceremo, comunque vada.”
         </p>
     </div>
 
-    <h2 style="text-align:center; color:#00ffe7; margin-top:60px;">Raccolta Foto</h2>
-
+    <h2>Raccolta Foto</h2>
     <div class="gallery-container">
         <div class="gallery-scroll">
-            <img src="WhatsApp Image 2025-07-20 at 13.27.22 (1).jpeg" alt="Foto 1">
-            <img src="WhatsApp Image 2025-07-20 at 13.27.22.jpeg" alt="Foto 2">
-            <img src="WhatsApp Image 2025-07-20 at 13.27.48 (1).jpeg" alt="Foto 3">
-            <img src="WhatsApp Image 2025-07-20 at 13.27.48.jpeg" alt="Foto 4">
-            <img src="WhatsApp Image 2025-07-20 at 13.27.53 (1).jpeg" alt="Foto 5">
-            <img src="WhatsApp Image 2025-07-20 at 13.27.53 (2).jpeg" alt="Foto 6">
-            <img src="WhatsApp Image 2025-07-20 at 13.27.53 (3).jpeg" alt="Foto 7">
-            <img src="WhatsApp Image 2025-07-20 at 13.27.53.jpeg" alt="Foto 8">
-            <img src="WhatsApp Image 2025-07-15 at 17.03.17.jpeg" alt="Foto 9">
-            <img src="WhatsApp Image 2025-07-20 at 12.56.01.jpeg" alt="Foto 10">
+            <img src="WhatsApp Image 2025-07-20 at 13.27.22 (1).jpeg" alt="Foto 1" onclick="openLightbox(this)">
+            <img src="WhatsApp Image 2025-07-20 at 13.27.22.jpeg" alt="Foto 2" onclick="openLightbox(this)">
+            <img src="WhatsApp Image 2025-07-20 at 13.27.48 (1).jpeg" alt="Foto 3" onclick="openLightbox(this)">
+            <img src="WhatsApp Image 2025-07-20 at 13.27.48.jpeg" alt="Foto 4" onclick="openLightbox(this)">
+            <img src="WhatsApp Image 2025-07-20 at 13.27.53 (1).jpeg" alt="Foto 5" onclick="openLightbox(this)">
+            <img src="WhatsApp Image 2025-07-20 at 13.27.53 (2).jpeg" alt="Foto 6" onclick="openLightbox(this)">
+            <img src="WhatsApp Image 2025-07-20 at 13.27.53 (3).jpeg" alt="Foto 7" onclick="openLightbox(this)">
+            <img src="WhatsApp Image 2025-07-20 at 13.27.53.jpeg" alt="Foto 8" onclick="openLightbox(this)">
+            <img src="WhatsApp Image 2025-07-15 at 17.03.17.jpeg" alt="Foto 9" onclick="openLightbox(this)">
+            <img src="WhatsApp Image 2025-07-20 at 12.56.01.jpeg" alt="Foto 10" onclick="openLightbox(this)">
         </div>
     </div>
 
-    <!-- SEZIONE VIDEO -->
-    <div class="video-section">
-        <h2>Raccolta Video</h2>
-        <video controls muted playsinline src="WhatsApp Video 2025-07-20 at 14.10.12.mp4"></video>
-        <video controls muted playsinline src="WhatsApp Video 2025-07-20 at 14.10.46.mp4"></video>
-        <video controls muted playsinline src="WhatsApp Video 2025-07-20 at 14.10.50.mp4"></video>
+    <h2>Raccolta Video</h2>
+    <div class="gallery-container">
+        <div class="gallery-scroll">
+            <video src="WhatsApp Video 2025-07-20 at 14.10.12.mp4" muted playsinline onclick="openLightbox(this)"></video>
+            <video src="WhatsApp Video 2025-07-20 at 14.10.46.mp4" muted playsinline onclick="openLightbox(this)"></video>
+            <video src="WhatsApp Video 2025-07-20 at 14.10.50.mp4" muted playsinline onclick="openLightbox(this)"></video>
+        </div>
     </div>
 
     <div class="footer">
@@ -164,6 +144,36 @@
         📧 <a href="mailto:mattia.speniseri@gmail.com">mattia.speniseri@gmail.com</a><br>
         📞 <a href="tel:3512543043">3512543043</a>
     </div>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <img id="lightboxImage" style="display:none;">
+        <video id="lightboxVideo" controls muted playsinline style="display:none;"></video>
+    </div>
+
+    <script>
+        function openLightbox(el) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightboxImage');
+            const video = document.getElementById('lightboxVideo');
+            if (el.tagName === 'IMG') {
+                img.src = el.src;
+                img.style.display = 'block';
+                video.style.display = 'none';
+            } else if (el.tagName === 'VIDEO') {
+                video.src = el.src;
+                video.style.display = 'block';
+                img.style.display = 'none';
+            }
+            box.style.display = 'flex';
+        }
+
+        function closeLightbox() {
+            const box = document.getElementById('lightbox');
+            box.style.display = 'none';
+            document.getElementById('lightboxVideo').pause();
+        }
+    </script>
 
 </body>
 </html>
