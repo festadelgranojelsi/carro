@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galleria Avengers con Lightbox</title>
+    <title>Carro Avengers - Festa del Grano Jelsi</title>
     <style>
         body {
             margin: 0;
@@ -70,13 +70,11 @@
 
     <div class="gallery-container">
         <div class="gallery-scroll" id="mediaGallery">
-            <!-- Foto e video -->
             <img src="foto1.jpg" onclick="openLightbox(0)">
             <img src="foto2.jpg" onclick="openLightbox(1)">
             <video src="video1.mp4" muted playsinline onclick="openLightbox(2)"></video>
             <img src="foto3.jpg" onclick="openLightbox(3)">
             <video src="video2.mp4" muted playsinline onclick="openLightbox(4)"></video>
-            <!-- Aggiungi altre immagini o video qui -->
         </div>
     </div>
 
@@ -130,7 +128,6 @@
             showMedia();
         }
 
-        // Chiudi il lightbox cliccando sullo sfondo
         document.getElementById('lightbox').addEventListener('click', function(e) {
             if (e.target === this) {
                 closeLightbox();
