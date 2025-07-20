@@ -54,6 +54,30 @@
             color: #00ffe7;
             text-decoration: none;
         }
+        /* Stile galleria */
+        .gallery-container {
+            overflow-x: auto;
+            white-space: nowrap;
+            background-color: #111;
+            padding: 10px;
+            margin: 30px auto;
+            max-width: 95%;
+            border-radius: 10px;
+            border: 2px solid #00ffe7;
+        }
+        .gallery-scroll img,
+        .gallery-scroll video {
+            display: inline-block;
+            width: 300px;
+            height: 200px;
+            margin: 5px;
+            border-radius: 10px;
+            object-fit: cover;
+            vertical-align: middle;
+        }
+        .gallery-scroll video {
+            background-color: #000;
+        }
     </style>
 </head>
 <body>
@@ -80,6 +104,32 @@
         <p class="quote">
             “Questa è la battaglia della nostra vita e la vinceremo, comunque vada.”
         </p>
+    </div>
+
+    <!-- GALLERIA FOTO E VIDEO ORIZZONTALE -->
+    <h2 style="text-align:center; color:#00ffe7; margin-top:60px;">Raccolta Foto e Video</h2>
+
+    <div class="gallery-container">
+        <div class="gallery-scroll">
+            <!-- FOTO -->
+            <img src="WhatsApp Image 2025-07-20 at 13.27.22 (1).jpeg" alt="Foto 1">
+            <img src="WhatsApp Image 2025-07-20 at 13.27.22.jpeg" alt="Foto 2">
+            <img src="WhatsApp Image 2025-07-20 at 13.27.48 (1).jpeg" alt="Foto 3">
+            <img src="WhatsApp Image 2025-07-20 at 13.27.48.jpeg" alt="Foto 4">
+            <img src="WhatsApp Image 2025-07-20 at 13.27.53 (1).jpeg" alt="Foto 5">
+            <img src="WhatsApp Image 2025-07-20 at 13.27.53 (2).jpeg" alt="Foto 6">
+            <img src="WhatsApp Image 2025-07-20 at 13.27.53 (3).jpeg" alt="Foto 7">
+            <img src="WhatsApp Image 2025-07-20 at 13.27.53.jpeg" alt="Foto 8">
+            
+            <!-- VIDEO -->
+            <video controls src="WhatsApp Video 2025-07-20 at 13.27.30.mp4"></video>
+            <video controls src="WhatsApp Video 2025-07-20 at 13.27.32.mp4"></video>
+            <video controls src="WhatsApp Video 2025-07-20 at 13.27.42.mp4"></video>
+            <video controls src="WhatsApp Video 2025-07-20 at 13.27.47.mp4"></video>
+            <video controls src="WhatsApp Video 2025-07-20 at 13.27.51.mp4"></video>
+            <video controls src="WhatsApp Video 2025-07-20 at 13.27.58.mp4"></video>
+            <video controls src="WhatsApp Video 2025-07-20 at 13.28.25.mp4"></video>
+        </div>
     </div>
 
     <!-- RETTANGOLO FINALE CON CONTATTI -->
