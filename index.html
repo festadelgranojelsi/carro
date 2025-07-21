@@ -78,7 +78,72 @@
     <img src="WhatsApp Image 2025-07-20 at 21.31.22.jpeg" alt="Festa di Sant'Anna Jelsi" style="width:100%; border-radius:10px;">
 </div>
 
-<!-- FOOTER e LIGHTBOX restano invariati -->
+<!-- FOOTER -->
+<div class="footer">
+    Questo sito è stato realizzato da <strong>Mattia Spensieri</strong><br>
+    📧 <a href="mailto:mattia.speniseri@gmail.com">mattia.speniseri@gmail.com</a><br>
+    📞 <a href="tel:3512543043">3512543043</a>
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox">
+    <div class="lightbox-background" onclick="closeLightbox()"></div>
+    <div class="arrow left" onclick="prevItem()">&#10094;</div>
+    <div class="arrow right" onclick="nextItem()">&#10095;</div>
+    <img id="lightboxImage" style="display:none;">
+    <video id="lightboxVideo" controls muted playsinline style="display:none;"></video>
+</div>
+
+<script>
+    let galleryItems = [];
+    let currentIndex = 0;
+
+    function openLightbox(el) {
+        galleryItems = Array.from(document.querySelectorAll('.gallery-scroll img, .gallery-scroll video'));
+        currentIndex = galleryItems.indexOf(el);
+        showItem(currentIndex);
+        document.getElementById('lightbox').style.display = 'flex';
+    }
+
+    function closeLightbox() {
+        document.getElementById('lightbox').style.display = 'none';
+        document.getElementById('lightboxVideo').pause();
+    }
+
+    function showItem(index) {
+        const img = document.getElementById('lightboxImage');
+        const video = document.getElementById('lightboxVideo');
+        const el = galleryItems[index];
+
+        if (el.tagName === 'IMG') {
+            img.src = el.src;
+            img.style.display = 'block';
+            video.style.display = 'none';
+        } else if (el.tagName === 'VIDEO') {
+            video.src = el.src;
+            video.style.display = 'block';
+            img.style.display = 'none';
+        }
+    }
+
+    function nextItem() {
+        currentIndex = (currentIndex + 1) % galleryItems.length;
+        showItem(currentIndex);
+    }
+
+    function prevItem() {
+        currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+        showItem(currentIndex);
+    }
+
+    document.addEventListener('keydown', function(event) {
+        if (document.getElementById('lightbox').style.display === 'flex') {
+            if (event.key === 'ArrowRight') nextItem();
+            if (event.key === 'ArrowLeft') prevItem();
+            if (event.key === 'Escape') closeLightbox();
+        }
+    });
+</script>
 
 </body>
 </html>
