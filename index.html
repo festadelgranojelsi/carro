@@ -3,13 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galleria Avengers con Lightbox</title>
+    <title>Carro Avengers - Festa del Grano Jelsi</title>
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
             background-color: #000;
             color: #fff;
+        }
+        .header-image {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+        }
+        .description {
+            background: #111;
+            padding: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: justify;
+            border-radius: 15px;
+            box-shadow: 0 0 15px #00ffe7;
+            margin-bottom: 40px;
+        }
+        h2 {
+            text-align: center;
+            color: #00ffe7;
+            font-size: 28px;
+        }
+        .footer {
+            background-color: #222;
+            padding: 20px;
+            text-align: center;
+            font-size: 16px;
+            border-top: 2px solid #00ffe7;
+            max-width: 900px;
+            margin: 20px auto 0 auto;
+            border-radius: 10px;
+        }
+        .footer a {
+            color: #00ffe7;
+            text-decoration: none;
         }
         .gallery-container {
             overflow-x: auto;
@@ -42,141 +78,128 @@
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
-            background: rgba(0,0,0,0.9);
+            background: rgba(0, 0, 0, 0.9);
             display: none;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
             z-index: 9999;
+            flex-direction: column;
         }
         .lightbox img, .lightbox video {
             max-width: 90%;
             max-height: 90%;
             border-radius: 10px;
+            position: relative;
+            z-index: 2;
         }
-        .arrow {
-            font-size: 40px;
-            color: #00ffe7;
+        .lightbox-background {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             cursor: pointer;
-            user-select: none;
-            margin: 20px;
-        }
-        .arrow:hover {
-            color: #00ffcc;
+            z-index: 1;
         }
     </style>
 </head>
 <body>
 
+    <img src="ChatGPT Image 19 lug 2025, 20_37_06.png" alt="Avengers Festa del Grano" class="header-image">
+
+    <div class="description">
+        <h2>Descrizione carro</h2>
+        <p>Questo carro è la rappresentazione dei personaggi della saga Avengers, una serie di film d’azione che narrano le loro battaglie per proteggere la Terra e l’universo.</p>
+        <p>Al centro, troneggia la lettera “A”, simbolo potente e inconfondibile di un gruppo che, pur tra mille differenze, ha saputo unirsi per proteggere ciò che conta.</p>
+        <p>Tutto intorno, il carro racconta con simboli: lo scudo di Cap, il martello di Thor, i pugni di Hulk, la clessidra della Vedova nera e l’arco di Hawkeye.</p>
+        <p style="font-style:italic; text-align:center; color:#00ff99;">“Questa è la battaglia della nostra vita e la vinceremo, comunque vada.”</p>
+    </div>
+
+    <h2>Raccolta Foto</h2>
     <div class="gallery-container">
-        <div class="gallery-scroll" id="mediaGallery">
-            <img src="WhatsApp Image 2025-07-20 at 23.16.09.jpeg" onclick="openLightbox(0)">
-            <img src="WhatsApp Image 2025-07-20 at 23.16.45.jpeg" onclick="openLightbox(1)">
-            <img src="WhatsApp Image 2025-07-20 at 23.22.22.jpeg" onclick="openLightbox(2)">
-            <img src="WhatsApp Image 2025-07-20 at 23.28.16.jpeg" onclick="openLightbox(3)">
-            <img src="WhatsApp Image 2025-07-20 at 23.28.20.jpeg" onclick="openLightbox(4)">
-            <img src="WhatsApp Image 2025-07-20 at 23.28.21.jpeg" onclick="openLightbox(5)">
-            <img src="WhatsApp Image 2025-07-20 at 23.28.23.jpeg" onclick="openLightbox(6)">
-            <video src="WhatsApp Video 2025-07-20 at 23.23.47.mp4" muted playsinline onclick="openLightbox(7)"></video>
-            <video src="WhatsApp Video 2025-07-20 at 23.26.15.mp4" muted playsinline onclick="openLightbox(8)"></video>
-            <video src="WhatsApp Video 2025-07-20 at 23.26.31.mp4" muted playsinline onclick="openLightbox(9)"></video>
-            <video src="WhatsApp Video 2025-07-20 at 23.27.41.mp4" muted playsinline onclick="openLightbox(10)"></video>
-            <video src="WhatsApp Video 2025-07-20 at 23.31.01.mp4" muted playsinline onclick="openLightbox(11)"></video>
-            <video src="WhatsApp Video 2025-07-20 at 23.32.05.mp4" muted playsinline onclick="openLightbox(12)"></video>
-            <video src="WhatsApp Video 2025-07-20 at 23.32.22.mp4" muted playsinline onclick="openLightbox(13)"></video>
-            <video src="WhatsApp Video 2025-07-20 at 23.43.45.mp4" muted playsinline onclick="openLightbox(14)"></video>
-            <video src="WhatsApp Video 2025-07-20 at 23.44.11.mp4" muted playsinline onclick="openLightbox(15)"></video>
-            <video src="WhatsApp Video 2025-07-20 at 23.45.16.mp4" muted playsinline onclick="openLightbox(16)"></video>
-            <video src="WhatsApp Video 2025-07-20 at 23.46.35.mp4" muted playsinline onclick="openLightbox(17)"></video>
-            <video src="WhatsApp Video 2025-07-20 at 23.47.07.mp4" muted playsinline onclick="openLightbox(18)"></video>
-            <video src="WhatsApp Video 2025-07-20 at 23.47.58.mp4" muted playsinline onclick="openLightbox(19)"></video>
-            <video src="WhatsApp Video 2025-07-21 at 00.01.01.mp4" muted playsinline onclick="openLightbox(20)"></video>
-            <video src="WhatsApp Video 2025-07-21 at 00.01.14.mp4" muted playsinline onclick="openLightbox(21)"></video>
-            <video src="WhatsApp Video 2025-07-21 at 00.01.28.mp4" muted playsinline onclick="openLightbox(22)"></video>
-            <video src="WhatsApp Video 2025-07-21 at 00.05.52.mp4" muted playsinline onclick="openLightbox(23)"></video>
-            <video src="WhatsApp Video 2025-07-21 at 00.05.59.mp4" muted playsinline onclick="openLightbox(24)"></video>
-            <video src="WhatsApp Video 2025-07-21 at 00.06.04.mp4" muted playsinline onclick="openLightbox(25)"></video>
-            <video src="WhatsApp Video 2025-07-21 at 00.06.16.mp4" muted playsinline onclick="openLightbox(26)"></video>
+        <div class="gallery-scroll">
+            <img src="WhatsApp Image 2025-07-20 at 13.27.22 (1).jpeg" alt="Foto 1" onclick="openLightbox(this)">
+            <img src="WhatsApp Image 2025-07-20 at 13.27.22.jpeg" alt="Foto 2" onclick="openLightbox(this)">
+            <img src="WhatsApp Image 2025-07-20 at 13.27.48 (1).jpeg" alt="Foto 3" onclick="openLightbox(this)">
+            <img src="WhatsApp Image 2025-07-20 at 13.27.48.jpeg" alt="Foto 4" onclick="openLightbox(this)">
+            <img src="WhatsApp Image 2025-07-20 at 13.27.53 (1).jpeg" alt="Foto 5" onclick="openLightbox(this)">
+            <img src="WhatsApp Image 2025-07-20 at 13.27.53 (2).jpeg" alt="Foto 6" onclick="openLightbox(this)">
+            <img src="WhatsApp Image 2025-07-20 at 13.27.53 (3).jpeg" alt="Foto 7" onclick="openLightbox(this)">
+            <img src="WhatsApp Image 2025-07-20 at 13.27.53.jpeg" alt="Foto 8" onclick="openLightbox(this)">
+            <img src="WhatsApp Image 2025-07-15 at 17.03.17.jpeg" alt="Foto 9" onclick="openLightbox(this)">
+            <img src="WhatsApp Image 2025-07-20 at 12.56.01.jpeg" alt="Foto 10" onclick="openLightbox(this)">
+            <img src="WhatsApp Image 2025-07-20 at 23.16.09.jpeg" alt="Foto 11" onclick="openLightbox(this)">
+            <img src="WhatsApp Image 2025-07-20 at 23.16.45.jpeg" alt="Foto 12" onclick="openLightbox(this)">
+            <img src="WhatsApp Image 2025-07-20 at 23.22.22.jpeg" alt="Foto 13" onclick="openLightbox(this)">
+            <img src="WhatsApp Image 2025-07-20 at 23.28.16.jpeg" alt="Foto 14" onclick="openLightbox(this)">
+            <img src="WhatsApp Image 2025-07-20 at 23.28.20.jpeg" alt="Foto 15" onclick="openLightbox(this)">
+            <img src="WhatsApp Image 2025-07-20 at 23.28.21.jpeg" alt="Foto 16" onclick="openLightbox(this)">
+            <img src="WhatsApp Image 2025-07-20 at 23.28.23.jpeg" alt="Foto 17" onclick="openLightbox(this)">
         </div>
     </div>
 
-    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-        <div class="arrow" onclick="event.stopPropagation(); prevMedia();">&#8592;</div>
-        <div id="mediaContent"></div>
-        <div class="arrow" onclick="event.stopPropagation(); nextMedia();">&#8594;</div>
+    <h2>Raccolta Video</h2>
+    <div class="gallery-container">
+        <div class="gallery-scroll">
+            <video src="WhatsApp Video 2025-07-20 at 14.10.12.mp4" muted playsinline onclick="openLightbox(this)"></video>
+            <video src="WhatsApp Video 2025-07-20 at 14.10.46.mp4" muted playsinline onclick="openLightbox(this)"></video>
+            <video src="WhatsApp Video 2025-07-20 at 14.10.50.mp4" muted playsinline onclick="openLightbox(this)"></video>
+            <video src="WhatsApp Video 2025-07-20 at 23.23.47.mp4" muted playsinline onclick="openLightbox(this)"></video>
+            <video src="WhatsApp Video 2025-07-20 at 23.26.15.mp4" muted playsinline onclick="openLightbox(this)"></video>
+            <video src="WhatsApp Video 2025-07-20 at 23.26.31.mp4" muted playsinline onclick="openLightbox(this)"></video>
+            <video src="WhatsApp Video 2025-07-20 at 23.27.41.mp4" muted playsinline onclick="openLightbox(this)"></video>
+            <video src="WhatsApp Video 2025-07-20 at 23.31.01.mp4" muted playsinline onclick="openLightbox(this)"></video>
+            <video src="WhatsApp Video 2025-07-20 at 23.32.05.mp4" muted playsinline onclick="openLightbox(this)"></video>
+            <video src="WhatsApp Video 2025-07-20 at 23.32.22.mp4" muted playsinline onclick="openLightbox(this)"></video>
+            <video src="WhatsApp Video 2025-07-20 at 23.43.45.mp4" muted playsinline onclick="openLightbox(this)"></video>
+            <video src="WhatsApp Video 2025-07-20 at 23.44.11.mp4" muted playsinline onclick="openLightbox(this)"></video>
+            <video src="WhatsApp Video 2025-07-20 at 23.45.16.mp4" muted playsinline onclick="openLightbox(this)"></video>
+            <video src="WhatsApp Video 2025-07-20 at 23.46.35.mp4" muted playsinline onclick="openLightbox(this)"></video>
+            <video src="WhatsApp Video 2025-07-20 at 23.47.07.mp4" muted playsinline onclick="openLightbox(this)"></video>
+            <video src="WhatsApp Video 2025-07-20 at 23.47.58.mp4" muted playsinline onclick="openLightbox(this)"></video>
+            <video src="WhatsApp Video 2025-07-21 at 00.01.01.mp4" muted playsinline onclick="openLightbox(this)"></video>
+            <video src="WhatsApp Video 2025-07-21 at 00.01.14.mp4" muted playsinline onclick="openLightbox(this)"></video>
+            <video src="WhatsApp Video 2025-07-21 at 00.01.28.mp4" muted playsinline onclick="openLightbox(this)"></video>
+            <video src="WhatsApp Video 2025-07-21 at 00.05.52.mp4" muted playsinline onclick="openLightbox(this)"></video>
+            <video src="WhatsApp Video 2025-07-21 at 00.05.59.mp4" muted playsinline onclick="openLightbox(this)"></video>
+            <video src="WhatsApp Video 2025-07-21 at 00.06.04.mp4" muted playsinline onclick="openLightbox(this)"></video>
+        </div>
+    </div>
+
+    <div class="footer">
+        Questo sito è stato realizzato da <strong>Mattia Spensieri</strong><br>
+        📧 <a href="mailto:mattia.speniseri@gmail.com">mattia.speniseri@gmail.com</a><br>
+        📞 <a href="tel:3512543043">3512543043</a>
+    </div>
+
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-background" onclick="closeLightbox()"></div>
+        <img id="lightboxImage" style="display:none;">
+        <video id="lightboxVideo" controls muted playsinline style="display:none;"></video>
     </div>
 
     <script>
-        const mediaItems = [
-            { type: 'img', src: 'WhatsApp Image 2025-07-20 at 23.16.09.jpeg' },
-            { type: 'img', src: 'WhatsApp Image 2025-07-20 at 23.16.45.jpeg' },
-            { type: 'img', src: 'WhatsApp Image 2025-07-20 at 23.22.22.jpeg' },
-            { type: 'img', src: 'WhatsApp Image 2025-07-20 at 23.28.16.jpeg' },
-            { type: 'img', src: 'WhatsApp Image 2025-07-20 at 23.28.20.jpeg' },
-            { type: 'img', src: 'WhatsApp Image 2025-07-20 at 23.28.21.jpeg' },
-            { type: 'img', src: 'WhatsApp Image 2025-07-20 at 23.28.23.jpeg' },
-            { type: 'video', src: 'WhatsApp Video 2025-07-20 at 23.23.47.mp4' },
-            { type: 'video', src: 'WhatsApp Video 2025-07-20 at 23.26.15.mp4' },
-            { type: 'video', src: 'WhatsApp Video 2025-07-20 at 23.26.31.mp4' },
-            { type: 'video', src: 'WhatsApp Video 2025-07-20 at 23.27.41.mp4' },
-            { type: 'video', src: 'WhatsApp Video 2025-07-20 at 23.31.01.mp4' },
-            { type: 'video', src: 'WhatsApp Video 2025-07-20 at 23.32.05.mp4' },
-            { type: 'video', src: 'WhatsApp Video 2025-07-20 at 23.32.22.mp4' },
-            { type: 'video', src: 'WhatsApp Video 2025-07-20 at 23.43.45.mp4' },
-            { type: 'video', src: 'WhatsApp Video 2025-07-20 at 23.44.11.mp4' },
-            { type: 'video', src: 'WhatsApp Video 2025-07-20 at 23.45.16.mp4' },
-            { type: 'video', src: 'WhatsApp Video 2025-07-20 at 23.46.35.mp4' },
-            { type: 'video', src: 'WhatsApp Video 2025-07-20 at 23.47.07.mp4' },
-            { type: 'video', src: 'WhatsApp Video 2025-07-20 at 23.47.58.mp4' },
-            { type: 'video', src: 'WhatsApp Video 2025-07-21 at 00.01.01.mp4' },
-            { type: 'video', src: 'WhatsApp Video 2025-07-21 at 00.01.14.mp4' },
-            { type: 'video', src: 'WhatsApp Video 2025-07-21 at 00.01.28.mp4' },
-            { type: 'video', src: 'WhatsApp Video 2025-07-21 at 00.05.52.mp4' },
-            { type: 'video', src: 'WhatsApp Video 2025-07-21 at 00.05.59.mp4' },
-            { type: 'video', src: 'WhatsApp Video 2025-07-21 at 00.06.04.mp4' },
-            { type: 'video', src: 'WhatsApp Video 2025-07-21 at 00.06.16.mp4' }
-        ];
+        function openLightbox(el) {
+            const box = document.getElementById('lightbox');
+            const img = document.getElementById('lightboxImage');
+            const video = document.getElementById('lightboxVideo');
 
-        let currentIndex = 0;
+            if (el.tagName === 'IMG') {
+                img.src = el.src;
+                img.style.display = 'block';
+                video.style.display = 'none';
+            } else if (el.tagName === 'VIDEO') {
+                video.src = el.src;
+                video.style.display = 'block';
+                img.style.display = 'none';
+            }
 
-        function openLightbox(index) {
-            currentIndex = index;
-            document.getElementById('lightbox').style.display = 'flex';
-            showMedia();
+            box.style.display = 'flex';
         }
 
         function closeLightbox() {
-            document.getElementById('lightbox').style.display = 'none';
-            document.getElementById('mediaContent').innerHTML = '';
+            const box = document.getElementById('lightbox');
+            box.style.display = 'none';
+            document.getElementById('lightboxVideo').pause();
         }
-
-        function showMedia() {
-            const mediaContent = document.getElementById('mediaContent');
-            const item = mediaItems[currentIndex];
-            let html = '';
-            if (item.type === 'img') {
-                html = `<img src="${item.src}">`;
-            } else if (item.type === 'video') {
-                html = `<video src="${item.src}" controls autoplay muted playsinline></video>`;
-            }
-            mediaContent.innerHTML = html;
-        }
-
-        function nextMedia() {
-            currentIndex = (currentIndex + 1) % mediaItems.length;
-            showMedia();
-        }
-
-        function prevMedia() {
-            currentIndex = (currentIndex - 1 + mediaItems.length) % mediaItems.length;
-            showMedia();
-        }
-
-        document.getElementById('lightbox').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeLightbox();
-            }
-        });
     </script>
 
 </body>
