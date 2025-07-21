@@ -91,7 +91,6 @@
             border-radius: 10px;
             position: relative;
             z-index: 2;
-            cursor: pointer;
         }
         .lightbox-background {
             position: absolute;
@@ -119,12 +118,8 @@
         .arrow:hover {
             background: rgba(0,0,0,0.7);
         }
-        .arrow.left {
-            left: 20px;
-        }
-        .arrow.right {
-            right: 20px;
-        }
+        .arrow.left { left: 20px; }
+        .arrow.right { right: 20px; }
     </style>
 </head>
 <body>
@@ -139,46 +134,25 @@
         <p style="font-style:italic; text-align:center; color:#00ff99;">“Questa è la battaglia della nostra vita e la vinceremo, comunque vada.”</p>
     </div>
 
-    <!-- RACCOLTA FOTO -->
     <h2>Raccolta Foto</h2>
     <div class="gallery-container">
         <div class="gallery-scroll">
-            <!-- INSERISCI TUTTE LE IMMAGINI QUI -->
-            <img src="WhatsApp Image 2025-07-20 at 13.27.22 (1).jpeg" onclick="openLightbox(this)">
-            <img src="WhatsApp Image 2025-07-20 at 13.27.22.jpeg" onclick="openLightbox(this)">
-            <img src="WhatsApp Image 2025-07-20 at 13.27.48 (1).jpeg" onclick="openLightbox(this)">
-            <img src="WhatsApp Image 2025-07-20 at 13.27.48.jpeg" onclick="openLightbox(this)">
-            <img src="WhatsApp Image 2025-07-20 at 13.27.53 (1).jpeg" onclick="openLightbox(this)">
-            <img src="WhatsApp Image 2025-07-20 at 13.27.53 (2).jpeg" onclick="openLightbox(this)">
-            <img src="WhatsApp Image 2025-07-20 at 13.27.53 (3).jpeg" onclick="openLightbox(this)">
-            <img src="WhatsApp Image 2025-07-20 at 13.27.53.jpeg" onclick="openLightbox(this)">
-            <img src="WhatsApp Image 2025-07-15 at 17.03.17.jpeg" onclick="openLightbox(this)">
-            <img src="WhatsApp Image 2025-07-20 at 12.56.01.jpeg" onclick="openLightbox(this)">
-            <img src="WhatsApp Image 2025-07-20 at 23.16.09.jpeg" onclick="openLightbox(this)">
-            <img src="WhatsApp Image 2025-07-20 at 23.16.45.jpeg" onclick="openLightbox(this)">
-            <img src="WhatsApp Image 2025-07-20 at 23.22.22.jpeg" onclick="openLightbox(this)">
-            <img src="WhatsApp Image 2025-07-20 at 23.28.16.jpeg" onclick="openLightbox(this)">
-            <img src="WhatsApp Image 2025-07-20 at 23.28.20.jpeg" onclick="openLightbox(this)">
-            <img src="WhatsApp Image 2025-07-20 at 23.28.21.jpeg" onclick="openLightbox(this)">
-            <img src="WhatsApp Image 2025-07-20 at 23.28.23.jpeg" onclick="openLightbox(this)">
+            <img src="foto1.jpg" alt="" onclick="openLightbox(this)">
+            <img src="foto2.jpg" alt="" onclick="openLightbox(this)">
+            <img src="foto3.jpg" alt="" onclick="openLightbox(this)">
+            <img src="foto4.jpg" alt="" onclick="openLightbox(this)">
+            <!-- Altre immagini -->
         </div>
     </div>
 
-    <!-- RACCOLTA VIDEO -->
     <h2>Raccolta Video</h2>
     <div class="gallery-container">
         <div class="gallery-scroll">
-            <!-- INSERISCI TUTTI I VIDEO QUI -->
-            <video src="WhatsApp Video 2025-07-20 at 14.10.12.mp4" poster="anteprima.jpg" muted playsinline onclick="openLightbox(this)"></video>
-            <video src="WhatsApp Video 2025-07-20 at 14.10.46.mp4" poster="anteprima.jpg" muted playsinline onclick="openLightbox(this)"></video>
-            <video src="WhatsApp Video 2025-07-20 at 14.10.50.mp4" poster="anteprima.jpg" muted playsinline onclick="openLightbox(this)"></video>
-            <video src="WhatsApp Video 2025-07-20 at 23.23.47.mp4" poster="anteprima.jpg" muted playsinline onclick="openLightbox(this)"></video>
-            <video src="WhatsApp Video 2025-07-20 at 23.26.15.mp4" poster="anteprima.jpg" muted playsinline onclick="openLightbox(this)"></video>
-            <video src="WhatsApp Video 2025-07-20 at 23.26.31.mp4" poster="anteprima.jpg" muted playsinline onclick="openLightbox(this)"></video>
-            <video src="WhatsApp Video 2025-07-20 at 23.27.41.mp4" poster="anteprima.jpg" muted playsinline onclick="openLightbox(this)"></video>
-            <video src="WhatsApp Video 2025-07-20 at 23.31.01.mp4" poster="anteprima.jpg" muted playsinline onclick="openLightbox(this)"></video>
-            <video src="WhatsApp Video 2025-07-20 at 23.32.05.mp4" poster="anteprima.jpg" muted playsinline onclick="openLightbox(this)"></video>
-            <!-- Continua per tutti i video -->
+            <video src="video1.mp4" poster="anteprima1.jpg" muted playsinline onclick="openLightbox(this)"></video>
+            <video src="video2.mp4" poster="anteprima2.jpg" muted playsinline onclick="openLightbox(this)"></video>
+            <video src="video3.mp4" poster="anteprima3.jpg" muted playsinline onclick="openLightbox(this)"></video>
+            <video src="video4.mp4" poster="anteprima4.jpg" muted playsinline onclick="openLightbox(this)"></video>
+            <!-- Altri video -->
         </div>
     </div>
 
@@ -188,13 +162,12 @@
         📞 <a href="tel:3512543043">3512543043</a>
     </div>
 
-    <!-- LIGHTBOX -->
     <div id="lightbox" class="lightbox">
         <div class="lightbox-background" onclick="closeLightbox()"></div>
         <div class="arrow left" onclick="prevItem()">&#10094;</div>
         <div class="arrow right" onclick="nextItem()">&#10095;</div>
-        <img id="lightboxImage" onclick="closeLightbox()" style="display:none;">
-        <video id="lightboxVideo" controls muted playsinline onclick="closeLightbox()" style="display:none;"></video>
+        <img id="lightboxImage" style="display:none;">
+        <video id="lightboxVideo" controls muted playsinline style="display:none;"></video>
     </div>
 
     <script>
